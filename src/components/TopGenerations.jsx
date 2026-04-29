@@ -1,0 +1,22 @@
+import React from 'react';
+import PhotoCard from './PhotoCard';
+
+const TopGenerations = async () => {
+    const res= await fetch('https://pixen-ai-image-generation-app.vercel.app/data.json')
+    const photos= await res.json();
+    console.log(photos);
+
+    const topPhotos= photos.slice(0,8);
+    console.log(topPhotos);
+
+    return (
+        <div className='w-[95%] md:w-[85%] mx-auto'>
+            <h1 className='text-2xl font-bold text-center'>Top Generation</h1>
+            <div className='grid grid-cols-4 mt-5 gap-5'>
+                {photos.map(photo=> <PhotoCard key={photo.id} photo={photo}></PhotoCard>)}
+            </div>
+        </div>
+    );
+};
+
+export default TopGenerations;
