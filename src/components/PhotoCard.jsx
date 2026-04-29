@@ -7,7 +7,7 @@ import { FaDownload } from 'react-icons/fa6';
 
 
 const PhotoCard = ({ photo }) => {
-    console.log(photo);
+    // console.log(photo);
 
     return (
         <Card className='border space-y-3 rounded-xl object-cover'>
@@ -16,8 +16,6 @@ const PhotoCard = ({ photo }) => {
 
                 <Image src={photo.imageUrl} fill alt='photo.title' className='object-cover rounded-xl' />
                 {/* <img src={photo.imageUrl} alt="photo.title" /> */}
-
-
 
             </div>
             <div>
